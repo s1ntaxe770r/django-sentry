@@ -10,6 +10,5 @@ def index(request):
     return render(request, "index.html")
 
 def mail(request):
-    raise requests.exceptions.HTTPError
     email_me.delay()
     return HttpResponse("Email sent have a nice day :)")
