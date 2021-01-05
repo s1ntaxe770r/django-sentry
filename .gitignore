@@ -3,4 +3,5 @@ env/
 SentryApp/__pycache__/
 sampleapp/__pycache__/
 ../.vscode/
+.vscode
  ./Project/sampleapp/migrations/__pycache__/  
