@@ -11,11 +11,10 @@ load_dotenv(envfile)
 from_email  = os.getenv("EMAIL_HOST_USER")
 
 @shared_task
-def email_me():
-    raise requests.exceptions.HTTPError("NETWORK FAILURE")
+def email_me(subject,message):
     send_mail(
-        "Look Email works now",
-        "task did not fail this time",
+        subject,
+        message,
         from_email,
         ['petejo7398@hmnmw.com'],
         fail_silently=False,)
