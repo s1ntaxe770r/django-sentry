@@ -12,13 +12,3 @@ class ContactForm(forms.Form):
 
 
 
-
-
-
-
-    # message  = forms.Textarea(widget=forms.Textarea(
-    #     attrs={
-    #         'class':'form-control',
-    #     }
-    # ))
-    
