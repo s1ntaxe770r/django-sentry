@@ -5,6 +5,20 @@ class ContactForm(forms.Form):
     """
     contact form 
     """
-    subject = forms.CharField(max_length=40)
-    message  = forms.CharField(max_length=200)
+    message = forms.CharField(
+        max_length=2000,
+        widget=forms.Textarea(attrs={'class': 'form-control'}),
+    )
+
+
+
+
+
+
+
+    # message  = forms.Textarea(widget=forms.Textarea(
+    #     attrs={
+    #         'class':'form-control',
+    #     }
+    # ))
     
