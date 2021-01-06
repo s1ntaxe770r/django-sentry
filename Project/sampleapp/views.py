@@ -7,12 +7,17 @@ from .forms import ContactForm
 
 
 def mail(request):
-    if request.Method == 'POST':
+    if request.method == 'POST':
         form = ContactForm
         if form.is_valid:
-            subject = form.cleaned_data['subject']
+            subject = "Someone has something to say"
             message = form.cleaned_data['message']
-            email_me.delay(message)
+            email_me.delay(message,subject)
+            return HttpResponse("Email sent have a nice day :)")
+    else:
+        form = ContactForm
+    return render(request,'index.html',{'form':form})
 
-  
-    return HttpResponse("Email sent have a nice day :)")
+
+        
+    
