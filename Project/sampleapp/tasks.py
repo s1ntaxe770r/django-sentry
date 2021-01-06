@@ -9,6 +9,7 @@ load_dotenv(envfile)
 
 
 from_email  = os.getenv("EMAIL_HOST_USER")
+recipent = os.getenv('EMAIL_RECEPIENT')
 
 @shared_task
 def email_me(subject,message):
@@ -16,7 +17,7 @@ def email_me(subject,message):
         subject,
         message,
         from_email,
-        ['petejo7398@hmnmw.com'],
+        [recipent],
         fail_silently=False,)
     return None
 
