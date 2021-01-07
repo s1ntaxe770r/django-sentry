@@ -19,3 +19,9 @@ RUN python Project/manage.py makemigrations && python Project/manage.py migrate 
 
 EXPOSE 8000
 
+WORKDIR /app/Project
+
+RUN celery -A SentryApp worker&
+
+CMD ["gunicorn", "-b 0.0.0.0:8000", "-w 4", "SentryApp.wsgi"]
+
