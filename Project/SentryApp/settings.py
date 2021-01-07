@@ -11,7 +11,7 @@ load_dotenv(envfile)
 
 
 sentry_sdk.init(
-    dsn="https://dda55196de064728b80325936d8404f7@o489015.ingest.sentry.io/5550407",
+    dsn=" ",
     integrations=[DjangoIntegration()],
 
     traces_sample_rate=1.0,
@@ -21,7 +21,7 @@ sentry_sdk.init(
 
 
 sentry_sdk.init(
-    dsn='https://dda55196de064728b80325936d8404f7@o489015.ingest.sentry.io/5550407',
+    dsn=' ',
     integrations=[CeleryIntegration()]
 )
 
