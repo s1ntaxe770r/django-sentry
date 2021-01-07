@@ -14,14 +14,13 @@ RUN pip install --no-cache-dir  -r  /app/requirements.txt
 
 COPY . .
 
-# Run migrations 
-RUN python Project/manage.py makemigrations && python Project/manage.py migrate --noinput
-
 EXPOSE 8000
 
 WORKDIR /app/Project
 
 RUN celery -A SentryApp worker&
+
+RUN python manage.py makemigrations && python manage.py migrate --noinput
 
 CMD ["gunicorn", "-b 0.0.0.0:8000", "-w 4", "SentryApp.wsgi"]
 
