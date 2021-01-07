@@ -5,3 +5,4 @@ sampleapp/__pycache__/
 .vscode
  ./Project/sampleapp/migrations/__pycache__/  
  Project/SentryApp/__pycache__/ 
+Project/db.sqlite3
