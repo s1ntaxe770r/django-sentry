@@ -1,5 +1,17 @@
-redis:
-  image: redis:alpine
-  container_name: redis
-  ports:
-    - "6379:6379"
+version: "3.7"
+
+services: 
+  web:
+    build: .
+    restart: always 
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis 
+      
+  redis:
+    image: redis:alpine
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
