@@ -14,8 +14,8 @@ recipent = os.getenv('EMAIL_RECEPIENT')
 @shared_task
 def email_me(subject,message):
     send_mail(
-        subject,
         message,
+        subject,
         from_email,
         [recipent],
         fail_silently=False,)
