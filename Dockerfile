@@ -18,9 +18,10 @@ EXPOSE 8000
 
 WORKDIR /app/Project
 
-RUN celery -A SentryApp worker&
-
 RUN python manage.py makemigrations && python manage.py migrate --noinput
 
-CMD ["gunicorn", "-b 0.0.0.0:8000", "-w 4", "SentryApp.wsgi"]
+ADD entrypoint.sh .
 
+RUN chmod +x entrypoint.sh
+
+CMD [ "./entrypoint.sh" ]
